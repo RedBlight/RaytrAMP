@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\LuVector">
+      <UniqueIdentifier>{6b44ca79-4c9a-4dbb-8a0d-b5a9c519fdad}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SOURCE\BoundBox.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\UnvTrigMeshFile.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\TypeDef.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\TriangleMesh.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\Triangle.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\StringFuncs.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\ReducedBvhArray.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\RayTube.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\RayPool.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\MortonManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\DepthMapGenerator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\BvhNodeTypes.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\BvhGenerator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\BoundSphere.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\LuVector\LuVector_Overload.hpp">
+      <Filter>Header Files\LuVector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\LuVector\LuVector_Unroll.hpp">
+      <Filter>Header Files\LuVector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\LuVector\LuVector_Op.hpp">
+      <Filter>Header Files\LuVector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\LuVector\LuVector_Math.hpp">
+      <Filter>Header Files\LuVector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\LuVector\LuVector_Geometry.hpp">
+      <Filter>Header Files\LuVector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\LuVector\LuVector_Body.hpp">
+      <Filter>Header Files\LuVector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\LuVector\LuVector_BasicMath.hpp">
+      <Filter>Header Files\LuVector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\LuVector\LuVector.hpp">
+      <Filter>Header Files\LuVector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\Observation.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\ObservationArray.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\SbrSolver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SOURCE\RcsArray.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
