@@ -6,7 +6,7 @@ clear all;
 
 c0 = 299792458.0;
 
-N = 1000;
+N = 100;
 fMin = 0.5 * c0;
 fMax = 5 * c0;
 
@@ -26,7 +26,7 @@ RaytrAMP.MonoRCS( "sphere1r287580.rba", "ObsFreq100.obs", "ObsFreq100.rcs" );
 [ rcsCount, rcsVector ] = RaytrAMP.LoadRcsFile( "ObsFreq100.rcs" );
 
 figure();
-plot( freq, rcsVector );
+loglog( freq, rcsVector );
 
 
 

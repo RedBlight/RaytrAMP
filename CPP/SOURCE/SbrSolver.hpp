@@ -128,20 +128,43 @@ public:
 					const ReducedBvhNode< T >& node = bvhGpu[ index< 1 >( hitIdx ) ];
 					LUV::Vec3< T > hitNormal = node.trig_.GetNormal();
 					LUV::Vec3< T > dirCrossNormal = LUV::Cross( ray.dir_, hitNormal );
+
 					LUV::Vec3< T > polU = LUV::Unit( dirCrossNormal );
-					LUV::Vec3< T > polR = LUV::Cross( polU, ray.dir_ );
+					LUV::Vec3< T > polR = LUV::Unit( LUV::Cross( ray.dir_, polU ) );
+
 					LUV::Vec3< T > refDir = LUV::Unit( ray.dir_ - hitNormal * ( 2.0 * LUV::Dot( ray.dir_, hitNormal ) ) );
-					LUV::Vec3< T > refPolU = polU;
-					LUV::Vec3< T > refPolR = LUV::Cross( refPolU, refDir );
+
+					LUV::Vec3< T > refPolU = -polU;
+					LUV::Vec3< T > refPolR = LUV::Cross( refDir, refPolU );
+
 					T polCompU = LUV::Dot( ray.pol_, polU );
 					T polCompR = LUV::Dot( ray.pol_, polR );
 					ray.pos_ = hitPointMin;
 					ray.dir_ = refDir;
-					ray.pol_ = -polCompR * refPolR + polCompU * refPolU;
+					ray.pol_ = - polCompR * refPolR + polCompU * refPolU;
 					ray.dist_ += hitDistMin;
 					ray.refNormal_ = hitNormal;
 					ray.refCount_ += 1;
 					ray.lastHitIdx_ = hitIdx;
+
+
+					//const ReducedBvhNode< T >& node = bvhGpu[ index< 1 >( hitIdx ) ];
+					//LUV::Vec3< T > hitNormal = node.trig_.GetNormal();
+					//LUV::Vec3< T > dirCrossNormal = LUV::Cross( ray.dir_, hitNormal );
+					//LUV::Vec3< T > polU = LUV::Unit( dirCrossNormal );
+					//LUV::Vec3< T > polR = LUV::Cross( polU, ray.dir_ );
+					//LUV::Vec3< T > refDir = LUV::Unit( ray.dir_ - hitNormal * ( 2.0 * LUV::Dot( ray.dir_, hitNormal ) ) );
+					//LUV::Vec3< T > refPolU = polU;
+					//LUV::Vec3< T > refPolR = LUV::Cross( refPolU, refDir );
+					//T polCompU = LUV::Dot( ray.pol_, polU );
+					//T polCompR = LUV::Dot( ray.pol_, polR );
+					//ray.pos_ = hitPointMin;
+					//ray.dir_ = refDir;
+					//ray.pol_ = - polCompR * refPolR + polCompU * refPolU;
+					//ray.dist_ += hitDistMin;
+					//ray.refNormal_ = hitNormal;
+					//ray.refCount_ += 1;
+					//ray.lastHitIdx_ = hitIdx;
 				}
 
 			}
@@ -196,7 +219,8 @@ public:
 			if( ray.refCount_ > 0 )
 			{
 				T kr = waveNum * ray.dist_;
-				T reflectionCoef = pow( -1.0, ray.refCount_ );
+				//T reflectionCoef = pow( -1.0, ray.refCount_ );
+				T reflectionCoef = pow( 1.0, ray.refCount_ );
 
 				LUV::Vec3< complex< T > > apE = exp( i * kr ) * ray.pol_ * reflectionCoef;
 				LUV::Vec3< complex< T > > apH = -LUV::Cross( apE, ray.dir_ );

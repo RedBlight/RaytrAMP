@@ -198,6 +198,11 @@ public:
 			trigVertexIndexPtr[ idv1 ] = ( U32 )( std::stoull( vIndices[ 0 ] ) ) - 1; // make sure that indices start with 0
 			trigVertexIndexPtr[ idv2 ] = ( U32 )( std::stoull( vIndices[ 1 ] ) ) - 1;
 			trigVertexIndexPtr[ idv3 ] = ( U32 )( std::stoull( vIndices[ 2 ] ) ) - 1;
+			///
+			if( trigVertexIndexPtr[ idv1 ] >= vertexCount_ ) std::cout << "ERROR in TrigMeshFile!" << std::endl;
+			if( trigVertexIndexPtr[ idv2 ] >= vertexCount_ ) std::cout << "ERROR in TrigMeshFile!" << std::endl;
+			if( trigVertexIndexPtr[ idv3 ] >= vertexCount_ ) std::cout << "ERROR in TrigMeshFile!" << std::endl; 
+			///
 		}
 
 		unvFile.close();
