@@ -39,29 +39,29 @@ These 2 executables are controlled via MATLAB. Again, MATLAB part is simple and 
 ### Dihedral Reflector:
 ![Dihedral Mesh](img/dihedralMesh.png "Dihedral Mesh")
 ![Dihedral RCS](img/dihedral.png "Dihedral RCS")
-Triangle Count: 4
-Frequency: ~15 GHz
-Electrical Size: ~50λ
-Direction Count: 3600
-RaytrAMP Execution Time: 3 minutes
-FEKO Execution Time: 32 minutes (~10x slower)
+Triangle Count: 4  
+Frequency: ~15 GHz  
+Electrical Size: ~50λ  
+Direction Count: 3600  
+RaytrAMP Execution Time: 3 minutes  
+FEKO Execution Time: 32 minutes (~10x slower)  
 
 ### Audi R8:
 ![Audi R8 Mesh](img/audiMesh.png "Audi R8 Mesh")
 ![Audi R8 RCS](img/audi.png "Audi R8 RCS")
-Triangle Count: 20973
-Frequency: ~1.5 GHz
-Electrical Size: ~25λ
-Direction Count: 90
-RaytrAMP Execution Time: 1.5 seconds
-FEKO Execution Time: 15 minutes (~600x slower)
+Triangle Count: 20973  
+Frequency: ~1.5 GHz  
+Electrical Size: ~25λ  
+Direction Count: 90  
+RaytrAMP Execution Time: 1.5 seconds  
+FEKO Execution Time: 15 minutes (~600x slower)  
 
 ### B-1B Lancer:
 ![B-1B Lancer Mesh](img/lancerMesh.png "B-1B Lancer Mesh")
 ![B-1B Lancer RCS](img/lancer.png "B-1B Lancer RCS")
-Triangle Count: 630886
-Frequency: ~1.5 GHz
-Electrical Size: ~250λ
-Direction Count: 2048
-RaytrAMP Execution Time: 30 minutes
-FEKO Execution Time: It takes 2 minutes to finish 1% of 1 direction. So it would require 9 months to finish. Not included for this reason. (~10000x slower)
+Triangle Count: 630886  
+Frequency: ~1.5 GHz  
+Electrical Size: ~250λ  
+Direction Count: 2048  
+RaytrAMP Execution Time: 30 minutes  
+FEKO Execution Time: It takes 2 minutes to finish 1% of 1 direction. So it would require 9 months to finish. Not included for this reason. (~10000x slower)  
