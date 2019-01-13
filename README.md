@@ -47,14 +47,13 @@ RaytrAMP Execution Time: 3 minutes
 FEKO Execution Time: 32 minutes (~10x slower)  
 
 ### Audi R8:
-![Audi R8 Mesh](img/audiMesh.png "Audi R8 Mesh")
-![Audi R8 RCS](img/audi.png "Audi R8 RCS")
 Triangle Count: 20973  
 Frequency: ~1.5 GHz  
 Electrical Size: ~25λ  
 Direction Count: 90  
 RaytrAMP Execution Time: 1.5 seconds  
 FEKO Execution Time: 15 minutes (~600x slower)  
+<img src="img/audiMesh.png" width="200"><img src="img/audi.png" width="200">
 
 ### B-1B Lancer:
 ![B-1B Lancer Mesh](img/lancerMesh.png "B-1B Lancer Mesh")
