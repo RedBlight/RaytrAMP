@@ -38,14 +38,16 @@ These 2 executables are controlled via MATLAB. Again, MATLAB part is simple and 
 
 ### Dihedral Reflector:
 
-![Dihedral Mesh](img/dihedralMesh.png "Dihedral Mesh")
-![Dihedral RCS](img/dihedral.png "Dihedral RCS")
+<img src="img/dihedralMesh.png" width="400">  
+
 Triangle Count: 4  
 Frequency: ~15 GHz  
 Electrical Size: ~50λ  
 Direction Count: 3600  
 RaytrAMP Execution Time: 3 minutes  
 FEKO Execution Time: 32 minutes (~10x slower)  
+
+<img src="img/dihedral.png">  
 
 
 ### Audi R8:
