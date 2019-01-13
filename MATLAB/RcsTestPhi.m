@@ -6,41 +6,29 @@ clear all;
 
 c0 = 299792458.0;
 
-N = 90 + 1;
-f = c0 * 50;
+N = 361;
+f = c0 * 10;
 
-phi = linspace( 0, 90, N );
-phi = pi .* phi ./ 180;
+phi = linspace( 0, 2 * pi, N );
 
-A = cos( phi );
-B = sin( phi );
-C = repmat( 0, N, 1 );
-D = repmat( 1, N, 1 );
+obsX = cos( phi );
+obsY = sin( phi );
+obsZ = repmat( 0, N, 1 );
 
-
-obsX = C;
-obsY = B;
-obsZ = A;
-
-polX = D;
-polY = C;
-polZ = C;
-% 
-% polX = -sin( phi );
-% polY = cos( phi );
-% polZ = repmat( 0, N, 1 );
+polX = repmat( 0, N, 1 );
+polY = repmat( 0, N, 1 );
+polZ = repmat( 1, N, 1 );
 
 freq = repmat( f, N, 1 );
-rayPerLam = repmat( 10, N, 1 );
+rayPerLam = repmat( 30, N, 1 );
 
 RaytrAMP.GenerateObsFile( "ObsPhi256.obs", N, obsX,obsY,obsZ, polX,polY,polZ, freq, rayPerLam );
-RaytrAMP.MonoRCS( "AudiR8_20000.rba", "ObsPhi256.obs", "ObsPhi256.rcs" );
+RaytrAMP.MonoRCS( "dihedral.rba", "ObsPhi256.obs", "ObsPhi256.rcs" );
 [ rcsCount, rcsVector ] = RaytrAMP.LoadRcsFile( "ObsPhi256.rcs" );
 
-%figure();
-%plot( 180*phi./pi, 10 .* log10( rcsVector ) );
-%figure();plot( 180*phi./pi, rcsVector );
+figure();
+plot( phi, 10 * log10( rcsVector ) );
 
-RaytrAMP.SaveAsFekoData( "data.feko", 180*phi./pi, rcsVector );
+
 
 

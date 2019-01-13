@@ -151,11 +151,6 @@ public:
 		std::sort( mortonArray_.begin(), mortonArray_.end(), MortonIndexPairSorter() );
 	}
 
-	/*
-		Tüm cismi kapsayan küpün geniþliðini bul
-		Bu küp 
-	*/
-
 	//void GenerateMortonArray_GPU() restrict( amp )
 	//{
 	//	using namespace concurrency;
