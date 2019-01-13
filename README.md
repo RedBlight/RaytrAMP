@@ -53,7 +53,7 @@ Electrical Size: ~25λ
 Direction Count: 90  
 RaytrAMP Execution Time: 1.5 seconds  
 FEKO Execution Time: 15 minutes (~600x slower)  
-<img src="img/audiMesh.png" width="200"><img src="img/audi.png" width="200">
+<img src="img/audiMesh.png" width="400"><img src="img/audi.png" width="400">
 
 ### B-1B Lancer:
 ![B-1B Lancer Mesh](img/lancerMesh.png "B-1B Lancer Mesh")
