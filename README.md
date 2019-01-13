@@ -37,6 +37,7 @@ These 2 executables are controlled via MATLAB. Again, MATLAB part is simple and 
 ## Here are some results:
 
 ### Dihedral Reflector:
+
 ![Dihedral Mesh](img/dihedralMesh.png "Dihedral Mesh")
 ![Dihedral RCS](img/dihedral.png "Dihedral RCS")
 Triangle Count: 4  
@@ -48,17 +49,21 @@ FEKO Execution Time: 32 minutes (~10x slower)
 
 
 ### Audi R8:
+
 <img src="img/audiMesh.png" width="400">  
+
 Triangle Count: 20973  
 Frequency: ~1.5 GHz  
 Electrical Size: ~25λ  
 Direction Count: 90  
 RaytrAMP Execution Time: 1.5 seconds  
 FEKO Execution Time: 15 minutes (~600x slower)  
+
 <img src="img/audi.png">  
 
 
 ### B-1B Lancer:
+
 ![B-1B Lancer Mesh](img/lancerMesh.png "B-1B Lancer Mesh")
 ![B-1B Lancer RCS](img/lancer.png "B-1B Lancer RCS")
 Triangle Count: 630886  
