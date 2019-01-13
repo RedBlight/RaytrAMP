@@ -66,11 +66,13 @@ FEKO Execution Time: 15 minutes (~600x slower)
 
 ### B-1B Lancer:
 
-![B-1B Lancer Mesh](img/lancerMesh.png "B-1B Lancer Mesh")
-![B-1B Lancer RCS](img/lancer.png "B-1B Lancer RCS")
+<img src="img/lancerMesh.png" width="400">  
+
 Triangle Count: 630886  
 Frequency: ~1.5 GHz  
 Electrical Size: ~250λ  
 Direction Count: 2048  
 RaytrAMP Execution Time: 30 minutes  
 FEKO Execution Time: It takes 2 minutes to finish 1% of 1 direction. So it would require 9 months to finish. Not included for this reason. (~10000x slower)  
+
+<img src="img/lancer.png">  
