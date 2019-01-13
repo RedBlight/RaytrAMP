@@ -1,5 +1,0 @@
-@COPY /Y "MakeMesh\OpenCL\MakeMesh.exe" "..\MATLAB\"
-@COPY /Y "MakeFace\OpenCL\MakeFace.exe" "..\MATLAB\"
-@COPY /Y "MakeQuad\OpenCL\MakeQuad.exe" "..\MATLAB\"
-@COPY /Y "Electrify\OpenCL\Electrify.exe" "..\MATLAB\"
-@COPY /Y "MakeRHS\OpenCL\MakeRHS.exe" "..\MATLAB\"

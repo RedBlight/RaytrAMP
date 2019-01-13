@@ -39,7 +39,7 @@ public:
 	void GenerateBvhArray()
 	{
 		bvhNodeArray_.clear();
-		bvhNodeArray_.reserve( 16 * mesh_->trigCount_ );
+		bvhNodeArray_.reserve( 24 * mesh_->trigCount_ );
 
 		bvhNodeArray_.push_back( BvhNode< T >(
 			(U64)( 0 ),
@@ -100,11 +100,35 @@ public:
 				
 				//std::cout << std::bitset< 64 >( node->upperMortonRange_ ) << std::endl;
 
+				U32 loRangeL = node->lowerIdxRange_;
+				U32 hiRangeL = node->upperIdxRange_;
+				U32 loRangeR = node->lowerIdxRange_;
+				U32 hiRangeR = node->upperIdxRange_;
+
+				///
+				// if this is the case, you have a bad mesh with tangled triangles.
+				if( midMortonRange <= node->lowerMortonRange_ || midMortonRange >= node->upperMortonRange_  )
+				{
+					//std::cout << "LO MORTON ERROR!!" << std::endl;
+					//std::cout << "UP MORTON ERROR!!" << std::endl;
+					//std::cout << node->lowerMortonRange_ << std::endl;
+					//std::cout << midMortonRange << std::endl;
+					//std::cout << node->upperMortonRange_ << std::endl;
+					//std::cout << node->lowerIdxRange_ << std::endl;
+					//std::cout << node->upperIdxRange_ << std::endl;
+					//system( "pause" );
+					loRangeL = node->lowerIdxRange_;
+					hiRangeL = loRangeL + elemCount / 2;
+					loRangeR = hiRangeL;
+					hiRangeR = node->upperIdxRange_;
+				}
+				///
+
 				bvhNodeArray_.push_back( BvhNode< T >(
 					node->lowerMortonRange_,
 					midMortonRange,
-					node->lowerIdxRange_,
-					node->upperIdxRange_,
+					loRangeL,
+					hiRangeL,
 					nodeIdx,
 					node->rightChildIdx_,
 					EMPTY
@@ -116,8 +140,8 @@ public:
 				bvhNodeArray_.push_back( BvhNode< T >(
 					midMortonRange + 1,
 					node->upperMortonRange_,
-					node->lowerIdxRange_,
-					node->upperIdxRange_,
+					loRangeR,
+					hiRangeR,
 					nodeIdx,
 					node->leftChildIdx_,
 					EMPTY

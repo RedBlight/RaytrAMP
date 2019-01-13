@@ -11,6 +11,7 @@ classdef RaytrAMP
 		rbaFolder = "\DataFiles\Rba\";
 		obsFolder = "\DataFiles\Obs\";
 		rcsFolder = "\DataFiles\Rcs\";
+		fekoFolder = "\Datafiles\Feko\";
 	end
 	
 	methods( Static )
@@ -66,6 +67,17 @@ classdef RaytrAMP
 			fileId = fopen( pwd + RaytrAMP.rcsFolder + fileName );
 			rcsCount = fread( fileId, 1, 'uint32' );
 			rcsVector = fread( fileId, rcsCount, 'single' );
+			fclose( fileId );
+		end
+		
+		function SaveAsFekoData( fileName, angleData, rcsData )
+			fileId = fopen( pwd + RaytrAMP.fekoFolder + fileName, 'w' );
+			for idx = 1 : numel( angleData )
+				fprintf( fileId, '%1.16E', angleData( idx ) );
+				fprintf( fileId, ',' );
+				fprintf( fileId, '%1.16E', rcsData( idx ) );
+				fprintf( fileId, '\n' );
+			end
 			fclose( fileId );
 		end
 		
