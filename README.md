@@ -28,7 +28,7 @@ Visual Studio is needed for compiling C++ programs that uses C++ AMP. There are 
 Converts .unv triangle mesh to readily available bounding volume hierarchy array (.rba) files.
 
 2) MonoRCS:
-Takes .rba and .obs files to calculate RCS, and then give a .rcs file as output.
+Takes .rba and .obs files as input to calculate monostatic RCS, and then gives an .rcs file as output.
 
 File formats are self explanatory on their C++ import/export classes.
 
